@@ -1,18 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ApolloModule } from 'apollo-angular';
 
 import { AppComponent } from './app.component';
+import { provideClient } from './client';
+import { FeedsComponent } from './feeds/feeds.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FeedsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    ReactiveFormsModule,
+    HttpModule,
+        ApolloModule.forRoot(provideClient)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

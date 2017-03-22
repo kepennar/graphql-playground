@@ -1,0 +1,11 @@
+
+<input type="search" placeholder="Search for..." [formControl]="filterControl" />
+
+<ul>
+  <li *ngFor="let feed of feeds | async">
+    <img src={{feed.imageUrl}} />
+    <p>
+      {{feed.description}}
+    </p>
+  </li>
+</ul>
